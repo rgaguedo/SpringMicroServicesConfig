@@ -11,6 +11,8 @@ eureka:
 spring:
   application:
     zipkin: http://localhost:9411
+  compatibility-verifier:
+    enabled: false
 
 resilience4j.circuitbreaker:
   instances:
