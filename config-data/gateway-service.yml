@@ -14,17 +14,18 @@ spring:
       client:
         provider:
           keycloak:
+            issuer-uri: http://localhost:9090/realms/api-realm
             authorization-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/auth
             userinfo-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/userinfo
             user-name-attribute: preferred_username
             token-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/token
-          registration:
-            api-client:
-              provider: keycloak
-              client-id: api-client
-              client-secret: HVWtAJutmwOsv8EK7rVkx9SvEQ3fX2qw
-              authorization-grant-type: authorization_code
-              redirect-uri: "{baseUrl}/login/oauth2/code/api-client"
+        registration:
+          keycloak:
+            provider: keycloak
+            client-id: api-client
+            client-secret: HVWtAJutmwOsv8EK7rVkx9SvEQ3fX2qw
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/api-client"
   cloud:
     gateway:
       default-filters:
