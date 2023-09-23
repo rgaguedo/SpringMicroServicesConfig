@@ -23,7 +23,7 @@ spring:
           api-client:
             provider: keycloak
             client-id: api-client
-            client-secret: "oYnQHe8ZotnroljEa0BRNMjP6E6y8c8n"
+            client-secret: oYnQHe8ZotnroljEa0BRNMjP6E6y8c8n
             authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/api-client"
   cloud:
