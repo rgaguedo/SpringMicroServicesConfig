@@ -20,7 +20,7 @@ spring:
             user-name-attribute: preferred_username
             token-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/token
         registration:
-          keycloak:
+          api-client:
             provider: keycloak
             client-id: api-client
             client-secret: HVWtAJutmwOsv8EK7rVkx9SvEQ3fX2qw
