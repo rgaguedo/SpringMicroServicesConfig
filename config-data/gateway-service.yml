@@ -21,9 +21,9 @@ spring:
             token-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/token
         registration:
           keycloak:
+            scope: openid
             client-id: api-client
             client-secret: oYnQHe8ZotnroljEa0BRNMjP6E6y8c8n
-            scope: openid
             authorization-grant-type: authorization_code
             redirect-uri: "http://localhost:8080/login/oauth2/code/api-client"
   cloud:
