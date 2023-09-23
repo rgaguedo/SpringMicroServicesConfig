@@ -14,7 +14,6 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://localhost:9090/realms/api-realm
             authorization-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/auth
             userinfo-uri: http://localhost:9090/realms/api-realm/protocol/openid-connect/userinfo
             user-name-attribute: preferred_username
@@ -25,7 +24,7 @@ spring:
             client-id: api-client
             client-secret: HVWtAJutmwOsv8EK7rVkx9SvEQ3fX2qw
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:9090/login/oauth2/code/api-client
+            redirect-uri: "{baseUrl}/login/oauth2/code/api-client"
   cloud:
     gateway:
       default-filters:
@@ -44,7 +43,11 @@ spring:
           uri: lb://ms-bike
           predicates:
             - Path=/bikes/**
+          filters:
+            - RemoveRequestHeader=Cookie
         - id: ms-car
           uri: lb://ms-car
           predicates:
             - Path=/cars/**
+          filters:
+            - RemoveRequestHeader=Cookie
